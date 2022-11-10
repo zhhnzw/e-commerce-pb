@@ -1,4 +1,4 @@
-module github.com/zhhnzw/e-commerce/gateway
+module github.com/zhhnzw/e-commerce-pb
 
 go 1.18
 
