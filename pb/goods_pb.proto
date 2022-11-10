@@ -1,0 +1,166 @@
+syntax = "proto3";
+option go_package = "./;pb";
+
+package pb;
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+service Goods {
+    rpc GetGoodsList (goodsRequest) returns (goodsReply) {
+
+    }
+    rpc GetGoodsDetail (goodsRequest) returns (goodsReplyItem) {
+
+    }
+    rpc GetGoodsHotList (goodsRequest) returns (goodsReply) {
+
+    }
+    rpc GetGoodsStatistic (goodsRequest) returns (goodsStatisticReply) {
+
+    }
+    rpc MakeStockUp (goodsRequest) returns (commonReply) {
+
+    }
+    rpc MakeStockDown (goodsRequest) returns (commonReply) {
+
+    }
+    rpc GetProductList (productRequest) returns (productListReply) {
+        option (google.api.http) = {
+            get: "/api/web/product"
+            additional_bindings {  // 为一个RPC方法定义多个http方法
+                get: "/api/web/index"  // 请求消息中没有被url path绑定的任何字段都会自动成为HTTP查询参数
+            }
+        };
+    }
+    rpc GetProductDetail (productRequest) returns (productDetailReply) {
+        option (google.api.http) = {
+            get: "/api/web/product/{sn}"
+        };
+    }
+    rpc GetSpecificationDetail (specificationRequest) returns (specificationDetailReply) {
+        option (google.api.http) = {
+            get: "/api/web/product/specification/{id}"
+        };
+    }
+    rpc GetAdList (google.protobuf.Empty) returns (adReply) {
+        option (google.api.http) = {
+            get: "/api/web/index/banner"
+        };
+    }
+}
+
+message goodsRequest {
+    string goodsUuid = 1;
+    int64 goodsTypeId = 2;
+    string primaryType = 3;
+    string secondaryType = 4;
+    bool isValid = 5;
+    int64 price = 6;
+    int64 stock = 7;
+    string publishDate = 8;
+    int64 pageIndex = 9;
+    int64 pageSize = 10;
+}
+
+message goodsReplyItem {
+    string goodsUuid = 1;
+    int64 goodsTypeId = 3;
+    string primaryType = 4;
+    string secondaryType = 5;
+    string img = 6;
+    string imgs = 7;
+    string title = 8;
+    string subtitle = 9;
+    int64 price = 10;
+    int64 stock = 11;
+    string publishDate = 12;
+}
+
+message goodsReply {
+    repeated goodsReplyItem data = 1;
+}
+
+message productRequest {
+    string goodsUuid = 1;
+    int64 goodsTypeId = 2;
+    string primaryType = 3;
+    string secondaryType = 4;
+    bool isValid = 5;
+    int64 price = 6;
+    int64 stock = 7;
+    string publishDate = 8;
+    int64 pageIndex = 9;
+    int64 pageSize = 10;
+    string sn = 18;
+}
+
+message productReplyItem {
+    int64 id = 1;
+    string name = 2;
+    string image = 3;
+    int64 price = 4;
+    string sn = 11;
+}
+
+message productListReply {
+    repeated productReplyItem data = 1;
+}
+
+message sku {
+    int64 stock = 1;
+    int64 price = 2;
+    int64 productId = 3;
+}
+
+message productImage {
+    string source = 1;
+}
+
+message productDetail {
+    int64 id = 1;
+    string name = 2;
+    string image = 3;
+    string caption = 4;
+    int64 price = 10;
+    repeated sku skus = 18;
+    repeated productImage product_images = 19;
+}
+
+message productDetailReply {
+    productDetail data = 1;
+}
+
+message specificationRequest {
+    string id = 1;
+}
+
+message specificationDetail {
+    string name = 1;
+}
+
+message specificationDetailReply {
+    repeated specificationDetail data = 1;
+}
+
+message goodsStatisticItem {
+    string goodsType = 1;
+    int64 count = 2;
+}
+
+message goodsStatisticReply {
+    repeated goodsStatisticItem data = 1;
+}
+
+message commonReply {
+    string msg = 1;
+}
+
+message adReplyItem {
+    string path = 1;
+    int64 url = 2;
+}
+
+message adReply {
+    repeated adReplyItem data = 1;
+}
