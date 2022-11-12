@@ -19,156 +19,276 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// UserClient is the client API for User service.
+// MemberClient is the client API for Member service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type UserClient interface {
-	Register(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
+type MemberClient interface {
+	GetSms(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*SmsReply, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error)
-	Logout(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
-type userClient struct {
+type memberClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUserClient(cc grpc.ClientConnInterface) UserClient {
-	return &userClient{cc}
+func NewMemberClient(cc grpc.ClientConnInterface) MemberClient {
+	return &memberClient{cc}
 }
 
-func (c *userClient) Register(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error) {
+func (c *memberClient) GetSms(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*SmsReply, error) {
+	out := new(SmsReply)
+	err := c.cc.Invoke(ctx, "/pb.Member/GetSms", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *memberClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error) {
 	out := new(LoginReply)
-	err := c.cc.Invoke(ctx, "/pb.User/Register", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Member/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginReply, error) {
-	out := new(LoginReply)
-	err := c.cc.Invoke(ctx, "/pb.User/Login", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userClient) Logout(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/pb.User/Logout", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// UserServer is the server API for User service.
-// All implementations should embed UnimplementedUserServer
+// MemberServer is the server API for Member service.
+// All implementations should embed UnimplementedMemberServer
 // for forward compatibility
-type UserServer interface {
-	Register(context.Context, *LoginRequest) (*LoginReply, error)
+type MemberServer interface {
+	GetSms(context.Context, *LoginRequest) (*SmsReply, error)
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
+}
+
+// UnimplementedMemberServer should be embedded to have forward compatible implementations.
+type UnimplementedMemberServer struct {
+}
+
+func (UnimplementedMemberServer) GetSms(context.Context, *LoginRequest) (*SmsReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSms not implemented")
+}
+func (UnimplementedMemberServer) Login(context.Context, *LoginRequest) (*LoginReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+
+// UnsafeMemberServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MemberServer will
+// result in compilation errors.
+type UnsafeMemberServer interface {
+	mustEmbedUnimplementedMemberServer()
+}
+
+func RegisterMemberServer(s grpc.ServiceRegistrar, srv MemberServer) {
+	s.RegisterService(&Member_ServiceDesc, srv)
+}
+
+func _Member_GetSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberServer).GetSms(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Member/GetSms",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberServer).GetSms(ctx, req.(*LoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Member_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberServer).Login(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Member/Login",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberServer).Login(ctx, req.(*LoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Member_ServiceDesc is the grpc.ServiceDesc for Member service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Member_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.Member",
+	HandlerType: (*MemberServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetSms",
+			Handler:    _Member_GetSms_Handler,
+		},
+		{
+			MethodName: "Login",
+			Handler:    _Member_Login_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "pb/user_pb.proto",
+}
+
+// SysUserClient is the client API for SysUser service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+type SysUserClient interface {
+	Register(ctx context.Context, in *SysLoginRequest, opts ...grpc.CallOption) (*SysLoginReply, error)
+	Login(ctx context.Context, in *SysLoginRequest, opts ...grpc.CallOption) (*SysLoginReply, error)
+	Logout(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*emptypb.Empty, error)
+}
+
+type sysUserClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewSysUserClient(cc grpc.ClientConnInterface) SysUserClient {
+	return &sysUserClient{cc}
+}
+
+func (c *sysUserClient) Register(ctx context.Context, in *SysLoginRequest, opts ...grpc.CallOption) (*SysLoginReply, error) {
+	out := new(SysLoginReply)
+	err := c.cc.Invoke(ctx, "/pb.SysUser/Register", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sysUserClient) Login(ctx context.Context, in *SysLoginRequest, opts ...grpc.CallOption) (*SysLoginReply, error) {
+	out := new(SysLoginReply)
+	err := c.cc.Invoke(ctx, "/pb.SysUser/Login", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *sysUserClient) Logout(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/pb.SysUser/Logout", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// SysUserServer is the server API for SysUser service.
+// All implementations should embed UnimplementedSysUserServer
+// for forward compatibility
+type SysUserServer interface {
+	Register(context.Context, *SysLoginRequest) (*SysLoginReply, error)
+	Login(context.Context, *SysLoginRequest) (*SysLoginReply, error)
 	Logout(context.Context, *emptypb.Empty) (*emptypb.Empty, error)
 }
 
-// UnimplementedUserServer should be embedded to have forward compatible implementations.
-type UnimplementedUserServer struct {
+// UnimplementedSysUserServer should be embedded to have forward compatible implementations.
+type UnimplementedSysUserServer struct {
 }
 
-func (UnimplementedUserServer) Register(context.Context, *LoginRequest) (*LoginReply, error) {
+func (UnimplementedSysUserServer) Register(context.Context, *SysLoginRequest) (*SysLoginReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
 }
-func (UnimplementedUserServer) Login(context.Context, *LoginRequest) (*LoginReply, error) {
+func (UnimplementedSysUserServer) Login(context.Context, *SysLoginRequest) (*SysLoginReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
-func (UnimplementedUserServer) Logout(context.Context, *emptypb.Empty) (*emptypb.Empty, error) {
+func (UnimplementedSysUserServer) Logout(context.Context, *emptypb.Empty) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
 }
 
-// UnsafeUserServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UserServer will
+// UnsafeSysUserServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to SysUserServer will
 // result in compilation errors.
-type UnsafeUserServer interface {
-	mustEmbedUnimplementedUserServer()
+type UnsafeSysUserServer interface {
+	mustEmbedUnimplementedSysUserServer()
 }
 
-func RegisterUserServer(s grpc.ServiceRegistrar, srv UserServer) {
-	s.RegisterService(&User_ServiceDesc, srv)
+func RegisterSysUserServer(s grpc.ServiceRegistrar, srv SysUserServer) {
+	s.RegisterService(&SysUser_ServiceDesc, srv)
 }
 
-func _User_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LoginRequest)
+func _SysUser_Register_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SysLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServer).Register(ctx, in)
+		return srv.(SysUserServer).Register(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.User/Register",
+		FullMethod: "/pb.SysUser/Register",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServer).Register(ctx, req.(*LoginRequest))
+		return srv.(SysUserServer).Register(ctx, req.(*SysLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _User_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LoginRequest)
+func _SysUser_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SysLoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServer).Login(ctx, in)
+		return srv.(SysUserServer).Login(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.User/Login",
+		FullMethod: "/pb.SysUser/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServer).Login(ctx, req.(*LoginRequest))
+		return srv.(SysUserServer).Login(ctx, req.(*SysLoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _User_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SysUser_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServer).Logout(ctx, in)
+		return srv.(SysUserServer).Logout(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.User/Logout",
+		FullMethod: "/pb.SysUser/Logout",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServer).Logout(ctx, req.(*emptypb.Empty))
+		return srv.(SysUserServer).Logout(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// User_ServiceDesc is the grpc.ServiceDesc for User service.
+// SysUser_ServiceDesc is the grpc.ServiceDesc for SysUser service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var User_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.User",
-	HandlerType: (*UserServer)(nil),
+var SysUser_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.SysUser",
+	HandlerType: (*SysUserServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Register",
-			Handler:    _User_Register_Handler,
+			Handler:    _SysUser_Register_Handler,
 		},
 		{
 			MethodName: "Login",
-			Handler:    _User_Login_Handler,
+			Handler:    _SysUser_Login_Handler,
 		},
 		{
 			MethodName: "Logout",
-			Handler:    _User_Logout_Handler,
+			Handler:    _SysUser_Logout_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

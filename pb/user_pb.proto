@@ -7,8 +7,8 @@ import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
 message LoginRequest{
-    string username=1;
-    string password=2;
+    string mobile=1;
+    string sms=2;
 }
 
 message LoginReply{
@@ -17,14 +17,45 @@ message LoginReply{
     string token=3;
 }
 
-service User {
-    rpc Register (LoginRequest) returns (LoginReply) {
+message SmsReply{
+    int64 status=1;
+    string data=2;
+}
+
+service Member {
+    rpc GetSms (LoginRequest) returns (SmsReply) {
+        option (google.api.http) = {
+            post: "/sms"
+            body: "*"
+        };
+    }
+    rpc Login (LoginRequest) returns (LoginReply) {
+        option (google.api.http) = {
+            post: "/login"
+            body: "*"
+        };
+    }
+}
+
+message SysLoginRequest{
+    string username=1;
+    string password=2;
+}
+
+message SysLoginReply{
+    int64 status=1;
+    string msg=2;
+    string token=3;
+}
+
+service SysUser {
+    rpc Register (SysLoginRequest) returns (SysLoginReply) {
         option (google.api.http) = {
             post: "/register"
             body: "*"
         };
     }
-    rpc Login (LoginRequest) returns (LoginReply) {
+    rpc Login (SysLoginRequest) returns (SysLoginReply) {
         option (google.api.http) = {
             post: "/login"
             body: "*"
