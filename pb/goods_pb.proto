@@ -114,7 +114,11 @@ message sku {
 }
 
 message productImage {
-    string source = 1;
+    int64 id = 1;
+    string source = 2;
+    string large = 3;
+    string medium = 4;
+    string thumbnail = 5;
 }
 
 message productDetail {
