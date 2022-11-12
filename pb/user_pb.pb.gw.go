@@ -216,7 +216,7 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/sms"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -241,7 +241,7 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/login"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -389,7 +389,7 @@ func RegisterMemberHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/sms"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -411,7 +411,7 @@ func RegisterMemberHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/login"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -431,9 +431,9 @@ func RegisterMemberHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 }
 
 var (
-	pattern_Member_GetSms_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"sms"}, ""))
+	pattern_Member_GetSms_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "sms"}, ""))
 
-	pattern_Member_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"login"}, ""))
+	pattern_Member_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "user", "login"}, ""))
 )
 
 var (

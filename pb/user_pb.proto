@@ -25,13 +25,13 @@ message SmsReply{
 service Member {
     rpc GetSms (LoginRequest) returns (SmsReply) {
         option (google.api.http) = {
-            post: "/sms"
+            post: "/api/web/sms"
             body: "*"
         };
     }
     rpc Login (LoginRequest) returns (LoginReply) {
         option (google.api.http) = {
-            post: "/login"
+            post: "/api/web/user/login"
             body: "*"
         };
     }
