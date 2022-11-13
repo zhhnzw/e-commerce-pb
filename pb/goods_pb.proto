@@ -43,6 +43,17 @@ service Goods {
             get: "/api/web/product/specification/{id}"
         };
     }
+    rpc AddCart (addCartRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/api/web/shopcart/add"
+            body: "*"
+        };
+    }
+    rpc GetCart (getCartRequest) returns (getCartReply) {
+        option (google.api.http) = {
+            get: "/api/web/shopcart"
+        };
+    }
     rpc GetAdList (google.protobuf.Empty) returns (adReply) {
         option (google.api.http) = {
             get: "/api/web/index/banner"
@@ -108,9 +119,10 @@ message productListReply {
 }
 
 message sku {
-    int64 stock = 1;
-    int64 price = 2;
-    int64 productId = 3;
+    int64 id = 1;
+    int64 stock = 2;
+    int64 price = 3;
+    int64 productId = 4;
 }
 
 message productImage {
@@ -133,6 +145,22 @@ message productDetail {
 
 message productDetailReply {
     productDetail data = 1;
+}
+
+message addCartRequest {
+    int64 skuId = 1;
+    int64 quantity = 2;
+}
+
+message getCartRequest{
+    int64 id = 1;
+}
+
+message getCartReply {
+    int64 id = 1;
+    int64 memberId = 2;
+    int64 skuId = 3;
+    int64 quantity = 4;
 }
 
 message specificationRequest {

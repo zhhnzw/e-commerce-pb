@@ -32,6 +32,8 @@ type GoodsClient interface {
 	GetProductList(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductListReply, error)
 	GetProductDetail(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductDetailReply, error)
 	GetSpecificationDetail(ctx context.Context, in *SpecificationRequest, opts ...grpc.CallOption) (*SpecificationDetailReply, error)
+	AddCart(ctx context.Context, in *AddCartRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	GetCart(ctx context.Context, in *GetCartRequest, opts ...grpc.CallOption) (*GetCartReply, error)
 	GetAdList(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*AdReply, error)
 }
 
@@ -124,6 +126,24 @@ func (c *goodsClient) GetSpecificationDetail(ctx context.Context, in *Specificat
 	return out, nil
 }
 
+func (c *goodsClient) AddCart(ctx context.Context, in *AddCartRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/pb.Goods/AddCart", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *goodsClient) GetCart(ctx context.Context, in *GetCartRequest, opts ...grpc.CallOption) (*GetCartReply, error) {
+	out := new(GetCartReply)
+	err := c.cc.Invoke(ctx, "/pb.Goods/GetCart", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *goodsClient) GetAdList(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*AdReply, error) {
 	out := new(AdReply)
 	err := c.cc.Invoke(ctx, "/pb.Goods/GetAdList", in, out, opts...)
@@ -146,6 +166,8 @@ type GoodsServer interface {
 	GetProductList(context.Context, *ProductRequest) (*ProductListReply, error)
 	GetProductDetail(context.Context, *ProductRequest) (*ProductDetailReply, error)
 	GetSpecificationDetail(context.Context, *SpecificationRequest) (*SpecificationDetailReply, error)
+	AddCart(context.Context, *AddCartRequest) (*emptypb.Empty, error)
+	GetCart(context.Context, *GetCartRequest) (*GetCartReply, error)
 	GetAdList(context.Context, *emptypb.Empty) (*AdReply, error)
 }
 
@@ -179,6 +201,12 @@ func (UnimplementedGoodsServer) GetProductDetail(context.Context, *ProductReques
 }
 func (UnimplementedGoodsServer) GetSpecificationDetail(context.Context, *SpecificationRequest) (*SpecificationDetailReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSpecificationDetail not implemented")
+}
+func (UnimplementedGoodsServer) AddCart(context.Context, *AddCartRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddCart not implemented")
+}
+func (UnimplementedGoodsServer) GetCart(context.Context, *GetCartRequest) (*GetCartReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCart not implemented")
 }
 func (UnimplementedGoodsServer) GetAdList(context.Context, *emptypb.Empty) (*AdReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAdList not implemented")
@@ -357,6 +385,42 @@ func _Goods_GetSpecificationDetail_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Goods_AddCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddCartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GoodsServer).AddCart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Goods/AddCart",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GoodsServer).AddCart(ctx, req.(*AddCartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Goods_GetCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(GoodsServer).GetCart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Goods/GetCart",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GoodsServer).GetCart(ctx, req.(*GetCartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Goods_GetAdList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
@@ -417,6 +481,14 @@ var Goods_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetSpecificationDetail",
 			Handler:    _Goods_GetSpecificationDetail_Handler,
+		},
+		{
+			MethodName: "AddCart",
+			Handler:    _Goods_AddCart_Handler,
+		},
+		{
+			MethodName: "GetCart",
+			Handler:    _Goods_GetCart_Handler,
 		},
 		{
 			MethodName: "GetAdList",
