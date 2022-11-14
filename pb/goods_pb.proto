@@ -161,6 +161,8 @@ message getCartReply {
     int64 memberId = 2;
     int64 skuId = 3;
     int64 quantity = 4;
+    sku sku = 5;
+    productDetail product = 6;
 }
 
 message specificationRequest {

@@ -22,6 +22,17 @@ message SmsReply{
     string data=2;
 }
 
+message Receiver {
+    int64 id = 1;
+    string consignee = 2;  // 收货人
+    string areaName = 3;  // 地区名称
+    string address = 4;  // 地址
+    string aipCode = 5;  // 邮编
+    string phone = 6;  // 电话
+    bool isDefault = 7;  // 是否默认
+    int64 memberId = 8;
+}
+
 service Member {
     rpc GetSms (LoginRequest) returns (SmsReply) {
         option (google.api.http) = {

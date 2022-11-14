@@ -1,0 +1,94 @@
+syntax = "proto3";
+option go_package = "./;pb";
+
+package pb;
+
+import "pb/goods_pb.proto";
+import "pb/user_pb.proto";
+import "google/api/annotations.proto";
+
+service Order {
+    rpc CheckoutOrder (checkoutOrderRequest) returns (checkoutOrderReply) {
+        option (google.api.http) = {
+            post: "/api/web/order/checkout"
+            body: "*"
+        };
+    }
+    rpc CreateOrder (orderRequest) returns (orderCommonReply) {
+
+    }
+    rpc GetOrderList (orderRequest) returns (orderReply) {
+
+    }
+    rpc GetOrderStatistic (orderRequest) returns (orderStatisticReply) {
+
+    }
+}
+
+message checkoutOrderRequest {
+    repeated string cartIds = 1;
+}
+
+message checkoutOrderReply {
+    int64 amount = 1;  // 商品总额
+    repeated getCartReply cartItems = 2;
+    int64 price = 3;
+    int64 fee = 4;  // 运费
+    string memo = 5;  // 留言
+    Receiver receiver = 6;  // 收货
+    int64 paymentMethodId = 7;
+    string paymentMethodName = 8;
+    int64 paymentMethodType = 9;
+    string paymentMethodTypeName = 10;
+}
+
+message orderRequest {
+    string orderId = 1;
+    string goodsUuid = 2;
+    int64 goodsTypeId = 3;
+    string primaryType = 4;
+    string secondaryType = 5;
+    string img = 6;
+    string title = 7;
+    string subtitle = 8;
+    int64 price = 9;
+    string orderStatus = 10;
+    string userName = 11;
+    string nickName = 12;
+    string mobile = 13;
+    string email = 14;
+    string avatar = 15;
+    int64 pageIndex = 16;
+    int64 pageSize = 17;
+}
+
+message orderReplyItem {
+    string orderId = 1;
+    string goodsUuid = 2;
+    int64 goodsTypeId = 3;
+    string primaryType = 4;
+    string secondaryType = 5;
+    string img = 6;
+    string title = 7;
+    string subtitle = 8;
+    int64 price = 9;
+    string orderStatus = 10;
+    string userName = 11;
+}
+
+message orderReply {
+    repeated orderReplyItem data = 1;
+}
+
+message orderStatisticItem {
+    string goodsType = 1;
+    int64 count = 2;
+}
+
+message orderStatisticReply {
+    repeated orderStatisticItem data = 1;
+}
+
+message orderCommonReply {
+    string msg = 1;
+}
