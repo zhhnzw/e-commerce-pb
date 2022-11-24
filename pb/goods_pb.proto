@@ -154,6 +154,8 @@ message addCartRequest {
 
 message getCartRequest{
     int64 id = 1;
+    int64 skuId = 2;
+    int64 quantity = 3;
 }
 
 message getCartReply {

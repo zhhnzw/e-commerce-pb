@@ -8,87 +8,64 @@ import "pb/user_pb.proto";
 import "google/api/annotations.proto";
 
 service Order {
-    rpc CheckoutOrder (checkoutOrderRequest) returns (checkoutOrderReply) {
-        option (google.api.http) = {
-            post: "/api/web/order/checkout"
-            body: "*"
-        };
-    }
-    rpc CreateOrder (orderRequest) returns (orderCommonReply) {
+  rpc CheckoutOrder (checkoutOrderRequest) returns (checkoutOrderReply) {
+    option (google.api.http) = {
+      post: "/api/web/order/checkout"
+      body: "*"
+    };
+  }
+  rpc AddOrder (order) returns (order) {
+    option (google.api.http) = {
+      post: "/api/web/order/add"
+      body: "*"
+    };
+  }
+  rpc GetOrderDetail (orderRequest) returns (order) {
+    option (google.api.http) = {
+      get: "/api/web/order/{sn}"
+    };
+  }
+  rpc GetOrderList (orderRequest) returns (orderListReply) {
 
-    }
-    rpc GetOrderList (orderRequest) returns (orderReply) {
-
-    }
-    rpc GetOrderStatistic (orderRequest) returns (orderStatisticReply) {
-
-    }
+  }
 }
 
 message checkoutOrderRequest {
-    repeated string cartIds = 1;
-}
-
-message checkoutOrderReply {
-    int64 amount = 1;  // 商品总额
-    repeated getCartReply cartItems = 2;
-    int64 price = 3;
-    int64 fee = 4;  // 运费
-    string memo = 5;  // 留言
-    Receiver receiver = 6;  // 收货
-    int64 paymentMethodId = 7;
-    string paymentMethodName = 8;
-    int64 paymentMethodType = 9;
-    string paymentMethodTypeName = 10;
+  repeated int64 cartIds = 1;
 }
 
 message orderRequest {
-    string orderId = 1;
-    string goodsUuid = 2;
-    int64 goodsTypeId = 3;
-    string primaryType = 4;
-    string secondaryType = 5;
-    string img = 6;
-    string title = 7;
-    string subtitle = 8;
-    int64 price = 9;
-    string orderStatus = 10;
-    string userName = 11;
-    string nickName = 12;
-    string mobile = 13;
-    string email = 14;
-    string avatar = 15;
-    int64 pageIndex = 16;
-    int64 pageSize = 17;
+  repeated getCartReply cartItems = 1;
+  Receiver receiver = 2;
+  string memo = 3;  // 留言
+  string sn = 4;
 }
 
-message orderReplyItem {
-    string orderId = 1;
-    string goodsUuid = 2;
-    int64 goodsTypeId = 3;
-    string primaryType = 4;
-    string secondaryType = 5;
-    string img = 6;
-    string title = 7;
-    string subtitle = 8;
-    int64 price = 9;
-    string orderStatus = 10;
-    string userName = 11;
+message checkoutOrderReply {
+  int64 amount = 1;  // 商品总额
+  repeated getCartReply cartItems = 2;
+  int64 price = 3;
+  int64 fee = 4;  // 运费
+  string memo = 5;  // 留言
+  Receiver receiver = 6;  // 收货信息
+  int64 paymentMethodId = 7;
+  string paymentMethodName = 8;
+  int64 paymentMethodType = 9;
+  string paymentMethodTypeName = 10;
 }
 
-message orderReply {
-    repeated orderReplyItem data = 1;
+message order {
+  int64 id = 1;
+  Receiver receiver = 2;
+  int64 skuId = 3;
+  string sn = 4;
+  int64 fee = 5;  // 运费
+  int64 price = 6; // 商品单价
+  int64 amount = 7;  // 商品总额
+  int64 quantity = 8;  // 数量
+  string memo = 10;  // 留言
 }
 
-message orderStatisticItem {
-    string goodsType = 1;
-    int64 count = 2;
-}
-
-message orderStatisticReply {
-    repeated orderStatisticItem data = 1;
-}
-
-message orderCommonReply {
-    string msg = 1;
+message orderListReply {
+  repeated order data = 1;
 }
