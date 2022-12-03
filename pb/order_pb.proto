@@ -26,7 +26,9 @@ service Order {
     };
   }
   rpc GetOrderList (orderRequest) returns (orderListReply) {
-
+    option (google.api.http) = {
+      get: "/api/web/order"
+    };
   }
 }
 
@@ -63,7 +65,10 @@ message order {
   int64 price = 6; // 商品单价
   int64 amount = 7;  // 商品总额
   int64 quantity = 8;  // 数量
+  int64 status = 9;  // 订单状态：0-等待付款、1-等待审核、2-等待收货、3-已发货、5-已完成、7-已取消、退款中
   string memo = 10;  // 留言
+  string image = 11;
+  string name = 12; // 商品名称
 }
 
 message orderListReply {
