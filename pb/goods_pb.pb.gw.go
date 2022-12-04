@@ -33,17 +33,17 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_Goods_GetProductList_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_GoodsService_GetProductList_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_Goods_GetProductList_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetProductList_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductList_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductList_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -52,14 +52,14 @@ func request_Goods_GetProductList_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_Goods_GetProductList_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetProductList_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductList_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductList_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -69,17 +69,17 @@ func local_request_Goods_GetProductList_0(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_Goods_GetProductList_1 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_GoodsService_GetProductList_1 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_Goods_GetProductList_1(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetProductList_1(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductList_1); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductList_1); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -88,14 +88,14 @@ func request_Goods_GetProductList_1(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_Goods_GetProductList_1(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetProductList_1(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductList_1); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductList_1); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -105,10 +105,10 @@ func local_request_Goods_GetProductList_1(ctx context.Context, marshaler runtime
 }
 
 var (
-	filter_Goods_GetProductDetail_0 = &utilities.DoubleArray{Encoding: map[string]int{"sn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_GoodsService_GetProductDetail_0 = &utilities.DoubleArray{Encoding: map[string]int{"sn": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_Goods_GetProductDetail_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetProductDetail_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
@@ -132,7 +132,7 @@ func request_Goods_GetProductDetail_0(ctx context.Context, marshaler runtime.Mar
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductDetail_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductDetail_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -141,7 +141,7 @@ func request_Goods_GetProductDetail_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Goods_GetProductDetail_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetProductDetail_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ProductRequest
 	var metadata runtime.ServerMetadata
 
@@ -165,7 +165,7 @@ func local_request_Goods_GetProductDetail_0(ctx context.Context, marshaler runti
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetProductDetail_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetProductDetail_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -174,7 +174,7 @@ func local_request_Goods_GetProductDetail_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Goods_GetSpecificationDetail_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetSpecificationDetail_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SpecificationRequest
 	var metadata runtime.ServerMetadata
 
@@ -200,7 +200,7 @@ func request_Goods_GetSpecificationDetail_0(ctx context.Context, marshaler runti
 
 }
 
-func local_request_Goods_GetSpecificationDetail_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetSpecificationDetail_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SpecificationRequest
 	var metadata runtime.ServerMetadata
 
@@ -226,7 +226,7 @@ func local_request_Goods_GetSpecificationDetail_0(ctx context.Context, marshaler
 
 }
 
-func request_Goods_AddCart_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_AddCart_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AddCartRequest
 	var metadata runtime.ServerMetadata
 
@@ -243,7 +243,7 @@ func request_Goods_AddCart_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_Goods_AddCart_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_AddCart_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq AddCartRequest
 	var metadata runtime.ServerMetadata
 
@@ -261,17 +261,17 @@ func local_request_Goods_AddCart_0(ctx context.Context, marshaler runtime.Marsha
 }
 
 var (
-	filter_Goods_GetCart_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_GoodsService_GetCart_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_Goods_GetCart_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetCart_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCartRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetCart_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetCart_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -280,14 +280,14 @@ func request_Goods_GetCart_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_Goods_GetCart_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetCart_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetCartRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Goods_GetCart_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GoodsService_GetCart_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -296,7 +296,7 @@ func local_request_Goods_GetCart_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_Goods_GetAdList_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_GoodsService_GetAdList_0(ctx context.Context, marshaler runtime.Marshaler, client GoodsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -305,7 +305,7 @@ func request_Goods_GetAdList_0(ctx context.Context, marshaler runtime.Marshaler,
 
 }
 
-func local_request_Goods_GetAdList_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_GoodsService_GetAdList_0(ctx context.Context, marshaler runtime.Marshaler, server GoodsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -314,13 +314,13 @@ func local_request_Goods_GetAdList_0(ctx context.Context, marshaler runtime.Mars
 
 }
 
-// RegisterGoodsHandlerServer registers the http handlers for service Goods to "mux".
-// UnaryRPC     :call GoodsServer directly.
+// RegisterGoodsServiceHandlerServer registers the http handlers for service GoodsService to "mux".
+// UnaryRPC     :call GoodsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGoodsHandlerFromEndpoint instead.
-func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GoodsServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGoodsServiceHandlerFromEndpoint instead.
+func RegisterGoodsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GoodsServiceServer) error {
 
-	mux.Handle("GET", pattern_Goods_GetProductList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -328,12 +328,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetProductList", runtime.WithHTTPPathPattern("/api/web/product"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetProductList", runtime.WithHTTPPathPattern("/api/web/product"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetProductList_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetProductList_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -341,11 +341,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetProductList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetProductList_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductList_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -353,12 +353,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetProductList", runtime.WithHTTPPathPattern("/api/web/index"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetProductList", runtime.WithHTTPPathPattern("/api/web/index"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetProductList_1(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetProductList_1(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -366,11 +366,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetProductList_1(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductList_1(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetProductDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -378,12 +378,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetProductDetail", runtime.WithHTTPPathPattern("/api/web/product/{sn}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetProductDetail", runtime.WithHTTPPathPattern("/api/web/product/{sn}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetProductDetail_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetProductDetail_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -391,11 +391,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetProductDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetSpecificationDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetSpecificationDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -403,12 +403,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetSpecificationDetail", runtime.WithHTTPPathPattern("/api/web/product/specification/{id}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetSpecificationDetail", runtime.WithHTTPPathPattern("/api/web/product/specification/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetSpecificationDetail_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetSpecificationDetail_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -416,11 +416,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetSpecificationDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetSpecificationDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Goods_AddCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GoodsService_AddCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -428,12 +428,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/AddCart", runtime.WithHTTPPathPattern("/api/web/shopcart/add"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/AddCart", runtime.WithHTTPPathPattern("/api/web/shopcart/add"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_AddCart_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_AddCart_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -441,11 +441,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_AddCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_AddCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -453,12 +453,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetCart", runtime.WithHTTPPathPattern("/api/web/shopcart"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetCart", runtime.WithHTTPPathPattern("/api/web/shopcart"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetCart_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetCart_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -466,11 +466,11 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetAdList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetAdList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -478,12 +478,12 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Goods/GetAdList", runtime.WithHTTPPathPattern("/api/web/index/banner"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.GoodsService/GetAdList", runtime.WithHTTPPathPattern("/api/web/index/banner"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Goods_GetAdList_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_GoodsService_GetAdList_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -491,16 +491,16 @@ func RegisterGoodsHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Goods_GetAdList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetAdList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterGoodsHandlerFromEndpoint is same as RegisterGoodsHandler but
+// RegisterGoodsServiceHandlerFromEndpoint is same as RegisterGoodsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterGoodsHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterGoodsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -520,173 +520,173 @@ func RegisterGoodsHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux
 		}()
 	}()
 
-	return RegisterGoodsHandler(ctx, mux, conn)
+	return RegisterGoodsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterGoodsHandler registers the http handlers for service Goods to "mux".
+// RegisterGoodsServiceHandler registers the http handlers for service GoodsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterGoodsHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterGoodsHandlerClient(ctx, mux, NewGoodsClient(conn))
+func RegisterGoodsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterGoodsServiceHandlerClient(ctx, mux, NewGoodsServiceClient(conn))
 }
 
-// RegisterGoodsHandlerClient registers the http handlers for service Goods
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GoodsClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GoodsClient"
+// RegisterGoodsServiceHandlerClient registers the http handlers for service GoodsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GoodsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GoodsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "GoodsClient" to call the correct interceptors.
-func RegisterGoodsHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GoodsClient) error {
+// "GoodsServiceClient" to call the correct interceptors.
+func RegisterGoodsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GoodsServiceClient) error {
 
-	mux.Handle("GET", pattern_Goods_GetProductList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetProductList", runtime.WithHTTPPathPattern("/api/web/product"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetProductList", runtime.WithHTTPPathPattern("/api/web/product"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetProductList_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetProductList_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetProductList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetProductList_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductList_1, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetProductList", runtime.WithHTTPPathPattern("/api/web/index"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetProductList", runtime.WithHTTPPathPattern("/api/web/index"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetProductList_1(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetProductList_1(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetProductList_1(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductList_1(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetProductDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetProductDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetProductDetail", runtime.WithHTTPPathPattern("/api/web/product/{sn}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetProductDetail", runtime.WithHTTPPathPattern("/api/web/product/{sn}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetProductDetail_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetProductDetail_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetProductDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetProductDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetSpecificationDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetSpecificationDetail_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetSpecificationDetail", runtime.WithHTTPPathPattern("/api/web/product/specification/{id}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetSpecificationDetail", runtime.WithHTTPPathPattern("/api/web/product/specification/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetSpecificationDetail_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetSpecificationDetail_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetSpecificationDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetSpecificationDetail_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Goods_AddCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_GoodsService_AddCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/AddCart", runtime.WithHTTPPathPattern("/api/web/shopcart/add"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/AddCart", runtime.WithHTTPPathPattern("/api/web/shopcart/add"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_AddCart_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_AddCart_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_AddCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_AddCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetCart_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetCart", runtime.WithHTTPPathPattern("/api/web/shopcart"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetCart", runtime.WithHTTPPathPattern("/api/web/shopcart"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetCart_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetCart_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetCart_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Goods_GetAdList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_GoodsService_GetAdList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Goods/GetAdList", runtime.WithHTTPPathPattern("/api/web/index/banner"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.GoodsService/GetAdList", runtime.WithHTTPPathPattern("/api/web/index/banner"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Goods_GetAdList_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_GoodsService_GetAdList_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Goods_GetAdList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_GoodsService_GetAdList_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -694,33 +694,33 @@ func RegisterGoodsHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Goods_GetProductList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "product"}, ""))
+	pattern_GoodsService_GetProductList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "product"}, ""))
 
-	pattern_Goods_GetProductList_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "index"}, ""))
+	pattern_GoodsService_GetProductList_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "index"}, ""))
 
-	pattern_Goods_GetProductDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "web", "product", "sn"}, ""))
+	pattern_GoodsService_GetProductDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "web", "product", "sn"}, ""))
 
-	pattern_Goods_GetSpecificationDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "web", "product", "specification", "id"}, ""))
+	pattern_GoodsService_GetSpecificationDetail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "web", "product", "specification", "id"}, ""))
 
-	pattern_Goods_AddCart_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "shopcart", "add"}, ""))
+	pattern_GoodsService_AddCart_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "shopcart", "add"}, ""))
 
-	pattern_Goods_GetCart_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "shopcart"}, ""))
+	pattern_GoodsService_GetCart_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "shopcart"}, ""))
 
-	pattern_Goods_GetAdList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "index", "banner"}, ""))
+	pattern_GoodsService_GetAdList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "index", "banner"}, ""))
 )
 
 var (
-	forward_Goods_GetProductList_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetProductList_0 = runtime.ForwardResponseMessage
 
-	forward_Goods_GetProductList_1 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetProductList_1 = runtime.ForwardResponseMessage
 
-	forward_Goods_GetProductDetail_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetProductDetail_0 = runtime.ForwardResponseMessage
 
-	forward_Goods_GetSpecificationDetail_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetSpecificationDetail_0 = runtime.ForwardResponseMessage
 
-	forward_Goods_AddCart_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_AddCart_0 = runtime.ForwardResponseMessage
 
-	forward_Goods_GetCart_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetCart_0 = runtime.ForwardResponseMessage
 
-	forward_Goods_GetAdList_0 = runtime.ForwardResponseMessage
+	forward_GoodsService_GetAdList_0 = runtime.ForwardResponseMessage
 )

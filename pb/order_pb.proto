@@ -7,20 +7,20 @@ import "pb/goods_pb.proto";
 import "pb/user_pb.proto";
 import "google/api/annotations.proto";
 
-service Order {
+service OrderService {
   rpc CheckoutOrder (checkoutOrderRequest) returns (checkoutOrderReply) {
     option (google.api.http) = {
       post: "/api/web/order/checkout"
       body: "*"
     };
   }
-  rpc AddOrder (order) returns (order) {
+  rpc AddOrder (addOrderRequest) returns (AddOrderReply) {
     option (google.api.http) = {
       post: "/api/web/order/add"
       body: "*"
     };
   }
-  rpc GetOrderDetail (orderRequest) returns (order) {
+  rpc GetOrderDetail (orderRequest) returns (Order) {
     option (google.api.http) = {
       get: "/api/web/order/{sn}"
     };
@@ -56,7 +56,7 @@ message checkoutOrderReply {
   string paymentMethodTypeName = 10;
 }
 
-message order {
+message Order {
   int64 id = 1;
   Receiver receiver = 2;
   int64 skuId = 3;
@@ -71,6 +71,16 @@ message order {
   string name = 12; // 商品名称
 }
 
+message addOrderRequest{
+  Order order = 1;
+}
+
+message AddOrderReply{
+  Order order = 1;
+  int64 code = 2;
+  string message = 3;
+}
+
 message orderListReply {
-  repeated order data = 1;
+  repeated Order data = 1;
 }

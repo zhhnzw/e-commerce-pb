@@ -32,7 +32,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Member_GetSms_0(ctx context.Context, marshaler runtime.Marshaler, client MemberClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_MemberService_GetSms_0(ctx context.Context, marshaler runtime.Marshaler, client MemberServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -49,7 +49,7 @@ func request_Member_GetSms_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_Member_GetSms_0(ctx context.Context, marshaler runtime.Marshaler, server MemberServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_MemberService_GetSms_0(ctx context.Context, marshaler runtime.Marshaler, server MemberServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -66,7 +66,7 @@ func local_request_Member_GetSms_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_Member_Login_0(ctx context.Context, marshaler runtime.Marshaler, client MemberClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_MemberService_Login_0(ctx context.Context, marshaler runtime.Marshaler, client MemberServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -83,7 +83,7 @@ func request_Member_Login_0(ctx context.Context, marshaler runtime.Marshaler, cl
 
 }
 
-func local_request_Member_Login_0(ctx context.Context, marshaler runtime.Marshaler, server MemberServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_MemberService_Login_0(ctx context.Context, marshaler runtime.Marshaler, server MemberServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq LoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -100,7 +100,7 @@ func local_request_Member_Login_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func request_SysUser_Register_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SysUserService_Register_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SysLoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -117,7 +117,7 @@ func request_SysUser_Register_0(ctx context.Context, marshaler runtime.Marshaler
 
 }
 
-func local_request_SysUser_Register_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SysUserService_Register_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SysLoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -134,7 +134,7 @@ func local_request_SysUser_Register_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func request_SysUser_Login_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SysUserService_Login_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SysLoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -151,7 +151,7 @@ func request_SysUser_Login_0(ctx context.Context, marshaler runtime.Marshaler, c
 
 }
 
-func local_request_SysUser_Login_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SysUserService_Login_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SysLoginRequest
 	var metadata runtime.ServerMetadata
 
@@ -168,7 +168,7 @@ func local_request_SysUser_Login_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func request_SysUser_Logout_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SysUserService_Logout_0(ctx context.Context, marshaler runtime.Marshaler, client SysUserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -185,7 +185,7 @@ func request_SysUser_Logout_0(ctx context.Context, marshaler runtime.Marshaler, 
 
 }
 
-func local_request_SysUser_Logout_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SysUserService_Logout_0(ctx context.Context, marshaler runtime.Marshaler, server SysUserServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq emptypb.Empty
 	var metadata runtime.ServerMetadata
 
@@ -202,13 +202,13 @@ func local_request_SysUser_Logout_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-// RegisterMemberHandlerServer registers the http handlers for service Member to "mux".
-// UnaryRPC     :call MemberServer directly.
+// RegisterMemberServiceHandlerServer registers the http handlers for service MemberService to "mux".
+// UnaryRPC     :call MemberServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterMemberHandlerFromEndpoint instead.
-func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, server MemberServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterMemberServiceHandlerFromEndpoint instead.
+func RegisterMemberServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server MemberServiceServer) error {
 
-	mux.Handle("POST", pattern_Member_GetSms_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MemberService_GetSms_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -216,12 +216,12 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.MemberService/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Member_GetSms_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_MemberService_GetSms_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -229,11 +229,11 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_Member_GetSms_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MemberService_GetSms_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Member_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MemberService_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -241,12 +241,12 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.MemberService/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Member_Login_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_MemberService_Login_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -254,20 +254,20 @@ func RegisterMemberHandlerServer(ctx context.Context, mux *runtime.ServeMux, ser
 			return
 		}
 
-		forward_Member_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MemberService_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterSysUserHandlerServer registers the http handlers for service SysUser to "mux".
-// UnaryRPC     :call SysUserServer directly.
+// RegisterSysUserServiceHandlerServer registers the http handlers for service SysUserService to "mux".
+// UnaryRPC     :call SysUserServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSysUserHandlerFromEndpoint instead.
-func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SysUserServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSysUserServiceHandlerFromEndpoint instead.
+func RegisterSysUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SysUserServiceServer) error {
 
-	mux.Handle("POST", pattern_SysUser_Register_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Register_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -275,12 +275,12 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUser/Register", runtime.WithHTTPPathPattern("/register"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUserService/Register", runtime.WithHTTPPathPattern("/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SysUser_Register_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SysUserService_Register_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -288,11 +288,11 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_SysUser_Register_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Register_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SysUser_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -300,12 +300,12 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUser/Login", runtime.WithHTTPPathPattern("/login"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUserService/Login", runtime.WithHTTPPathPattern("/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SysUser_Login_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SysUserService_Login_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -313,11 +313,11 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_SysUser_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SysUser_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -325,12 +325,12 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUser/Logout", runtime.WithHTTPPathPattern("/logout"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/pb.SysUserService/Logout", runtime.WithHTTPPathPattern("/logout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SysUser_Logout_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SysUserService_Logout_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
@@ -338,16 +338,16 @@ func RegisterSysUserHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_SysUser_Logout_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Logout_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterMemberHandlerFromEndpoint is same as RegisterMemberHandler but
+// RegisterMemberServiceHandlerFromEndpoint is same as RegisterMemberServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterMemberHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterMemberServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -367,63 +367,63 @@ func RegisterMemberHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMu
 		}()
 	}()
 
-	return RegisterMemberHandler(ctx, mux, conn)
+	return RegisterMemberServiceHandler(ctx, mux, conn)
 }
 
-// RegisterMemberHandler registers the http handlers for service Member to "mux".
+// RegisterMemberServiceHandler registers the http handlers for service MemberService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterMemberHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterMemberHandlerClient(ctx, mux, NewMemberClient(conn))
+func RegisterMemberServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterMemberServiceHandlerClient(ctx, mux, NewMemberServiceClient(conn))
 }
 
-// RegisterMemberHandlerClient registers the http handlers for service Member
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "MemberClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "MemberClient"
+// RegisterMemberServiceHandlerClient registers the http handlers for service MemberService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "MemberServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "MemberServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "MemberClient" to call the correct interceptors.
-func RegisterMemberHandlerClient(ctx context.Context, mux *runtime.ServeMux, client MemberClient) error {
+// "MemberServiceClient" to call the correct interceptors.
+func RegisterMemberServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client MemberServiceClient) error {
 
-	mux.Handle("POST", pattern_Member_GetSms_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MemberService_GetSms_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.MemberService/GetSms", runtime.WithHTTPPathPattern("/api/web/sms"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Member_GetSms_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_MemberService_GetSms_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Member_GetSms_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MemberService_GetSms_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Member_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MemberService_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.Member/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.MemberService/Login", runtime.WithHTTPPathPattern("/api/web/user/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Member_Login_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_MemberService_Login_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Member_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MemberService_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -431,20 +431,20 @@ func RegisterMemberHandlerClient(ctx context.Context, mux *runtime.ServeMux, cli
 }
 
 var (
-	pattern_Member_GetSms_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "sms"}, ""))
+	pattern_MemberService_GetSms_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "web", "sms"}, ""))
 
-	pattern_Member_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "user", "login"}, ""))
+	pattern_MemberService_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "web", "user", "login"}, ""))
 )
 
 var (
-	forward_Member_GetSms_0 = runtime.ForwardResponseMessage
+	forward_MemberService_GetSms_0 = runtime.ForwardResponseMessage
 
-	forward_Member_Login_0 = runtime.ForwardResponseMessage
+	forward_MemberService_Login_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterSysUserHandlerFromEndpoint is same as RegisterSysUserHandler but
+// RegisterSysUserServiceHandlerFromEndpoint is same as RegisterSysUserServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterSysUserHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterSysUserServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -464,85 +464,85 @@ func RegisterSysUserHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterSysUserHandler(ctx, mux, conn)
+	return RegisterSysUserServiceHandler(ctx, mux, conn)
 }
 
-// RegisterSysUserHandler registers the http handlers for service SysUser to "mux".
+// RegisterSysUserServiceHandler registers the http handlers for service SysUserService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterSysUserHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterSysUserHandlerClient(ctx, mux, NewSysUserClient(conn))
+func RegisterSysUserServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterSysUserServiceHandlerClient(ctx, mux, NewSysUserServiceClient(conn))
 }
 
-// RegisterSysUserHandlerClient registers the http handlers for service SysUser
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SysUserClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SysUserClient"
+// RegisterSysUserServiceHandlerClient registers the http handlers for service SysUserService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SysUserServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SysUserServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "SysUserClient" to call the correct interceptors.
-func RegisterSysUserHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SysUserClient) error {
+// "SysUserServiceClient" to call the correct interceptors.
+func RegisterSysUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SysUserServiceClient) error {
 
-	mux.Handle("POST", pattern_SysUser_Register_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Register_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUser/Register", runtime.WithHTTPPathPattern("/register"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUserService/Register", runtime.WithHTTPPathPattern("/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SysUser_Register_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SysUserService_Register_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SysUser_Register_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Register_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SysUser_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Login_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUser/Login", runtime.WithHTTPPathPattern("/login"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUserService/Login", runtime.WithHTTPPathPattern("/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SysUser_Login_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SysUserService_Login_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SysUser_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Login_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_SysUser_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SysUserService_Logout_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUser/Logout", runtime.WithHTTPPathPattern("/logout"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/pb.SysUserService/Logout", runtime.WithHTTPPathPattern("/logout"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SysUser_Logout_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SysUserService_Logout_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SysUser_Logout_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SysUserService_Logout_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -550,17 +550,17 @@ func RegisterSysUserHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_SysUser_Register_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"register"}, ""))
+	pattern_SysUserService_Register_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"register"}, ""))
 
-	pattern_SysUser_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"login"}, ""))
+	pattern_SysUserService_Login_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"login"}, ""))
 
-	pattern_SysUser_Logout_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"logout"}, ""))
+	pattern_SysUserService_Logout_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"logout"}, ""))
 )
 
 var (
-	forward_SysUser_Register_0 = runtime.ForwardResponseMessage
+	forward_SysUserService_Register_0 = runtime.ForwardResponseMessage
 
-	forward_SysUser_Login_0 = runtime.ForwardResponseMessage
+	forward_SysUserService_Login_0 = runtime.ForwardResponseMessage
 
-	forward_SysUser_Logout_0 = runtime.ForwardResponseMessage
+	forward_SysUserService_Logout_0 = runtime.ForwardResponseMessage
 )

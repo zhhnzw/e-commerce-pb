@@ -6,7 +6,7 @@ package pb;
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 
-service Goods {
+service GoodsService {
     rpc GetGoodsList (goodsRequest) returns (goodsReply) {
 
     }

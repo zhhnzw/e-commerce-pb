@@ -19,10 +19,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// GoodsClient is the client API for Goods service.
+// GoodsServiceClient is the client API for GoodsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type GoodsClient interface {
+type GoodsServiceClient interface {
 	GetGoodsList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error)
 	GetGoodsDetail(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReplyItem, error)
 	GetGoodsHotList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error)
@@ -37,126 +37,126 @@ type GoodsClient interface {
 	GetAdList(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*AdReply, error)
 }
 
-type goodsClient struct {
+type goodsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewGoodsClient(cc grpc.ClientConnInterface) GoodsClient {
-	return &goodsClient{cc}
+func NewGoodsServiceClient(cc grpc.ClientConnInterface) GoodsServiceClient {
+	return &goodsServiceClient{cc}
 }
 
-func (c *goodsClient) GetGoodsList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error) {
+func (c *goodsServiceClient) GetGoodsList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error) {
 	out := new(GoodsReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetGoodsList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetGoodsList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetGoodsDetail(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReplyItem, error) {
+func (c *goodsServiceClient) GetGoodsDetail(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReplyItem, error) {
 	out := new(GoodsReplyItem)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetGoodsDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetGoodsDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetGoodsHotList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error) {
+func (c *goodsServiceClient) GetGoodsHotList(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsReply, error) {
 	out := new(GoodsReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetGoodsHotList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetGoodsHotList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetGoodsStatistic(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsStatisticReply, error) {
+func (c *goodsServiceClient) GetGoodsStatistic(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*GoodsStatisticReply, error) {
 	out := new(GoodsStatisticReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetGoodsStatistic", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetGoodsStatistic", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) MakeStockUp(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*CommonReply, error) {
+func (c *goodsServiceClient) MakeStockUp(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*CommonReply, error) {
 	out := new(CommonReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/MakeStockUp", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/MakeStockUp", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) MakeStockDown(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*CommonReply, error) {
+func (c *goodsServiceClient) MakeStockDown(ctx context.Context, in *GoodsRequest, opts ...grpc.CallOption) (*CommonReply, error) {
 	out := new(CommonReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/MakeStockDown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/MakeStockDown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetProductList(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductListReply, error) {
+func (c *goodsServiceClient) GetProductList(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductListReply, error) {
 	out := new(ProductListReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetProductList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetProductList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetProductDetail(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductDetailReply, error) {
+func (c *goodsServiceClient) GetProductDetail(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*ProductDetailReply, error) {
 	out := new(ProductDetailReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetProductDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetProductDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetSpecificationDetail(ctx context.Context, in *SpecificationRequest, opts ...grpc.CallOption) (*SpecificationDetailReply, error) {
+func (c *goodsServiceClient) GetSpecificationDetail(ctx context.Context, in *SpecificationRequest, opts ...grpc.CallOption) (*SpecificationDetailReply, error) {
 	out := new(SpecificationDetailReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetSpecificationDetail", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetSpecificationDetail", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) AddCart(ctx context.Context, in *AddCartRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *goodsServiceClient) AddCart(ctx context.Context, in *AddCartRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/pb.Goods/AddCart", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/AddCart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetCart(ctx context.Context, in *GetCartRequest, opts ...grpc.CallOption) (*GetCartReply, error) {
+func (c *goodsServiceClient) GetCart(ctx context.Context, in *GetCartRequest, opts ...grpc.CallOption) (*GetCartReply, error) {
 	out := new(GetCartReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetCart", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetCart", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *goodsClient) GetAdList(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*AdReply, error) {
+func (c *goodsServiceClient) GetAdList(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*AdReply, error) {
 	out := new(AdReply)
-	err := c.cc.Invoke(ctx, "/pb.Goods/GetAdList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.GoodsService/GetAdList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// GoodsServer is the server API for Goods service.
-// All implementations should embed UnimplementedGoodsServer
+// GoodsServiceServer is the server API for GoodsService service.
+// All implementations should embed UnimplementedGoodsServiceServer
 // for forward compatibility
-type GoodsServer interface {
+type GoodsServiceServer interface {
 	GetGoodsList(context.Context, *GoodsRequest) (*GoodsReply, error)
 	GetGoodsDetail(context.Context, *GoodsRequest) (*GoodsReplyItem, error)
 	GetGoodsHotList(context.Context, *GoodsRequest) (*GoodsReply, error)
@@ -171,328 +171,328 @@ type GoodsServer interface {
 	GetAdList(context.Context, *emptypb.Empty) (*AdReply, error)
 }
 
-// UnimplementedGoodsServer should be embedded to have forward compatible implementations.
-type UnimplementedGoodsServer struct {
+// UnimplementedGoodsServiceServer should be embedded to have forward compatible implementations.
+type UnimplementedGoodsServiceServer struct {
 }
 
-func (UnimplementedGoodsServer) GetGoodsList(context.Context, *GoodsRequest) (*GoodsReply, error) {
+func (UnimplementedGoodsServiceServer) GetGoodsList(context.Context, *GoodsRequest) (*GoodsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsList not implemented")
 }
-func (UnimplementedGoodsServer) GetGoodsDetail(context.Context, *GoodsRequest) (*GoodsReplyItem, error) {
+func (UnimplementedGoodsServiceServer) GetGoodsDetail(context.Context, *GoodsRequest) (*GoodsReplyItem, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsDetail not implemented")
 }
-func (UnimplementedGoodsServer) GetGoodsHotList(context.Context, *GoodsRequest) (*GoodsReply, error) {
+func (UnimplementedGoodsServiceServer) GetGoodsHotList(context.Context, *GoodsRequest) (*GoodsReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsHotList not implemented")
 }
-func (UnimplementedGoodsServer) GetGoodsStatistic(context.Context, *GoodsRequest) (*GoodsStatisticReply, error) {
+func (UnimplementedGoodsServiceServer) GetGoodsStatistic(context.Context, *GoodsRequest) (*GoodsStatisticReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetGoodsStatistic not implemented")
 }
-func (UnimplementedGoodsServer) MakeStockUp(context.Context, *GoodsRequest) (*CommonReply, error) {
+func (UnimplementedGoodsServiceServer) MakeStockUp(context.Context, *GoodsRequest) (*CommonReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MakeStockUp not implemented")
 }
-func (UnimplementedGoodsServer) MakeStockDown(context.Context, *GoodsRequest) (*CommonReply, error) {
+func (UnimplementedGoodsServiceServer) MakeStockDown(context.Context, *GoodsRequest) (*CommonReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MakeStockDown not implemented")
 }
-func (UnimplementedGoodsServer) GetProductList(context.Context, *ProductRequest) (*ProductListReply, error) {
+func (UnimplementedGoodsServiceServer) GetProductList(context.Context, *ProductRequest) (*ProductListReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProductList not implemented")
 }
-func (UnimplementedGoodsServer) GetProductDetail(context.Context, *ProductRequest) (*ProductDetailReply, error) {
+func (UnimplementedGoodsServiceServer) GetProductDetail(context.Context, *ProductRequest) (*ProductDetailReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProductDetail not implemented")
 }
-func (UnimplementedGoodsServer) GetSpecificationDetail(context.Context, *SpecificationRequest) (*SpecificationDetailReply, error) {
+func (UnimplementedGoodsServiceServer) GetSpecificationDetail(context.Context, *SpecificationRequest) (*SpecificationDetailReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSpecificationDetail not implemented")
 }
-func (UnimplementedGoodsServer) AddCart(context.Context, *AddCartRequest) (*emptypb.Empty, error) {
+func (UnimplementedGoodsServiceServer) AddCart(context.Context, *AddCartRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddCart not implemented")
 }
-func (UnimplementedGoodsServer) GetCart(context.Context, *GetCartRequest) (*GetCartReply, error) {
+func (UnimplementedGoodsServiceServer) GetCart(context.Context, *GetCartRequest) (*GetCartReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCart not implemented")
 }
-func (UnimplementedGoodsServer) GetAdList(context.Context, *emptypb.Empty) (*AdReply, error) {
+func (UnimplementedGoodsServiceServer) GetAdList(context.Context, *emptypb.Empty) (*AdReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAdList not implemented")
 }
 
-// UnsafeGoodsServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to GoodsServer will
+// UnsafeGoodsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to GoodsServiceServer will
 // result in compilation errors.
-type UnsafeGoodsServer interface {
-	mustEmbedUnimplementedGoodsServer()
+type UnsafeGoodsServiceServer interface {
+	mustEmbedUnimplementedGoodsServiceServer()
 }
 
-func RegisterGoodsServer(s grpc.ServiceRegistrar, srv GoodsServer) {
-	s.RegisterService(&Goods_ServiceDesc, srv)
+func RegisterGoodsServiceServer(s grpc.ServiceRegistrar, srv GoodsServiceServer) {
+	s.RegisterService(&GoodsService_ServiceDesc, srv)
 }
 
-func _Goods_GetGoodsList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetGoodsList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetGoodsList(ctx, in)
+		return srv.(GoodsServiceServer).GetGoodsList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetGoodsList",
+		FullMethod: "/pb.GoodsService/GetGoodsList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetGoodsList(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).GetGoodsList(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetGoodsDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetGoodsDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetGoodsDetail(ctx, in)
+		return srv.(GoodsServiceServer).GetGoodsDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetGoodsDetail",
+		FullMethod: "/pb.GoodsService/GetGoodsDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetGoodsDetail(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).GetGoodsDetail(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetGoodsHotList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetGoodsHotList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetGoodsHotList(ctx, in)
+		return srv.(GoodsServiceServer).GetGoodsHotList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetGoodsHotList",
+		FullMethod: "/pb.GoodsService/GetGoodsHotList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetGoodsHotList(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).GetGoodsHotList(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetGoodsStatistic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetGoodsStatistic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetGoodsStatistic(ctx, in)
+		return srv.(GoodsServiceServer).GetGoodsStatistic(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetGoodsStatistic",
+		FullMethod: "/pb.GoodsService/GetGoodsStatistic",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetGoodsStatistic(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).GetGoodsStatistic(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_MakeStockUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_MakeStockUp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).MakeStockUp(ctx, in)
+		return srv.(GoodsServiceServer).MakeStockUp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/MakeStockUp",
+		FullMethod: "/pb.GoodsService/MakeStockUp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).MakeStockUp(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).MakeStockUp(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_MakeStockDown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_MakeStockDown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GoodsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).MakeStockDown(ctx, in)
+		return srv.(GoodsServiceServer).MakeStockDown(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/MakeStockDown",
+		FullMethod: "/pb.GoodsService/MakeStockDown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).MakeStockDown(ctx, req.(*GoodsRequest))
+		return srv.(GoodsServiceServer).MakeStockDown(ctx, req.(*GoodsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetProductList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetProductList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ProductRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetProductList(ctx, in)
+		return srv.(GoodsServiceServer).GetProductList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetProductList",
+		FullMethod: "/pb.GoodsService/GetProductList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetProductList(ctx, req.(*ProductRequest))
+		return srv.(GoodsServiceServer).GetProductList(ctx, req.(*ProductRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetProductDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetProductDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ProductRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetProductDetail(ctx, in)
+		return srv.(GoodsServiceServer).GetProductDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetProductDetail",
+		FullMethod: "/pb.GoodsService/GetProductDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetProductDetail(ctx, req.(*ProductRequest))
+		return srv.(GoodsServiceServer).GetProductDetail(ctx, req.(*ProductRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetSpecificationDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetSpecificationDetail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SpecificationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetSpecificationDetail(ctx, in)
+		return srv.(GoodsServiceServer).GetSpecificationDetail(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetSpecificationDetail",
+		FullMethod: "/pb.GoodsService/GetSpecificationDetail",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetSpecificationDetail(ctx, req.(*SpecificationRequest))
+		return srv.(GoodsServiceServer).GetSpecificationDetail(ctx, req.(*SpecificationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_AddCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_AddCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddCartRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).AddCart(ctx, in)
+		return srv.(GoodsServiceServer).AddCart(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/AddCart",
+		FullMethod: "/pb.GoodsService/AddCart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).AddCart(ctx, req.(*AddCartRequest))
+		return srv.(GoodsServiceServer).AddCart(ctx, req.(*AddCartRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetCart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetCartRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetCart(ctx, in)
+		return srv.(GoodsServiceServer).GetCart(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetCart",
+		FullMethod: "/pb.GoodsService/GetCart",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetCart(ctx, req.(*GetCartRequest))
+		return srv.(GoodsServiceServer).GetCart(ctx, req.(*GetCartRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Goods_GetAdList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GoodsService_GetAdList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GoodsServer).GetAdList(ctx, in)
+		return srv.(GoodsServiceServer).GetAdList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Goods/GetAdList",
+		FullMethod: "/pb.GoodsService/GetAdList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GoodsServer).GetAdList(ctx, req.(*emptypb.Empty))
+		return srv.(GoodsServiceServer).GetAdList(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Goods_ServiceDesc is the grpc.ServiceDesc for Goods service.
+// GoodsService_ServiceDesc is the grpc.ServiceDesc for GoodsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Goods_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "pb.Goods",
-	HandlerType: (*GoodsServer)(nil),
+var GoodsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "pb.GoodsService",
+	HandlerType: (*GoodsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetGoodsList",
-			Handler:    _Goods_GetGoodsList_Handler,
+			Handler:    _GoodsService_GetGoodsList_Handler,
 		},
 		{
 			MethodName: "GetGoodsDetail",
-			Handler:    _Goods_GetGoodsDetail_Handler,
+			Handler:    _GoodsService_GetGoodsDetail_Handler,
 		},
 		{
 			MethodName: "GetGoodsHotList",
-			Handler:    _Goods_GetGoodsHotList_Handler,
+			Handler:    _GoodsService_GetGoodsHotList_Handler,
 		},
 		{
 			MethodName: "GetGoodsStatistic",
-			Handler:    _Goods_GetGoodsStatistic_Handler,
+			Handler:    _GoodsService_GetGoodsStatistic_Handler,
 		},
 		{
 			MethodName: "MakeStockUp",
-			Handler:    _Goods_MakeStockUp_Handler,
+			Handler:    _GoodsService_MakeStockUp_Handler,
 		},
 		{
 			MethodName: "MakeStockDown",
-			Handler:    _Goods_MakeStockDown_Handler,
+			Handler:    _GoodsService_MakeStockDown_Handler,
 		},
 		{
 			MethodName: "GetProductList",
-			Handler:    _Goods_GetProductList_Handler,
+			Handler:    _GoodsService_GetProductList_Handler,
 		},
 		{
 			MethodName: "GetProductDetail",
-			Handler:    _Goods_GetProductDetail_Handler,
+			Handler:    _GoodsService_GetProductDetail_Handler,
 		},
 		{
 			MethodName: "GetSpecificationDetail",
-			Handler:    _Goods_GetSpecificationDetail_Handler,
+			Handler:    _GoodsService_GetSpecificationDetail_Handler,
 		},
 		{
 			MethodName: "AddCart",
-			Handler:    _Goods_AddCart_Handler,
+			Handler:    _GoodsService_AddCart_Handler,
 		},
 		{
 			MethodName: "GetCart",
-			Handler:    _Goods_GetCart_Handler,
+			Handler:    _GoodsService_GetCart_Handler,
 		},
 		{
 			MethodName: "GetAdList",
-			Handler:    _Goods_GetAdList_Handler,
+			Handler:    _GoodsService_GetAdList_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

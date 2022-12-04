@@ -33,7 +33,7 @@ message Receiver {
     int64 memberId = 8;
 }
 
-service Member {
+service MemberService {
     rpc GetSms (LoginRequest) returns (SmsReply) {
         option (google.api.http) = {
             post: "/api/web/sms"
@@ -59,7 +59,7 @@ message SysLoginReply{
     string token=3;
 }
 
-service SysUser {
+service SysUserService {
     rpc Register (SysLoginRequest) returns (SysLoginReply) {
         option (google.api.http) = {
             post: "/register"
