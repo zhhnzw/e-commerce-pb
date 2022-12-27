@@ -3,8 +3,8 @@ option go_package = "./;pb";
 
 package pb;
 
-import "pb/goods_pb.proto";
-import "pb/user_pb.proto";
+import "goods_pb.proto";
+import "user_pb.proto";
 import "google/api/annotations.proto";
 
 service OrderService {

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.7
-// source: pb/user_pb.proto
+// source: user_pb.proto
 
 package pb
 
@@ -136,7 +136,7 @@ var MemberService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "pb/user_pb.proto",
+	Metadata: "user_pb.proto",
 }
 
 // SysUserServiceClient is the client API for SysUserService service.
@@ -292,5 +292,5 @@ var SysUserService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "pb/user_pb.proto",
+	Metadata: "user_pb.proto",
 }

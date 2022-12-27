@@ -1,1 +1,1 @@
-protoc -I=. -I=$GOPATH/src/googleapis --go_out=./pb --go-grpc_out=require_unimplemented_servers=false:./pb --grpc-gateway_out=logtostderr=true:./pb/ pb/*.proto
+protoc -I=./pb -I=$GOPATH/src/googleapis --go_out=./pb --go-grpc_out=require_unimplemented_servers=false:./pb --grpc-gateway_out=logtostderr=true:./pb/ pb/*.proto
